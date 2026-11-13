@@ -4,12 +4,12 @@
 // space, and the judge reads exactly the bytes written, so write no line
 // end you do not mean to show.
 //
-// Joke selection (14 Nov 2026, blind pairwise evidence): the entry is the
-// Box track's G7, which went 3/3 against the top-3 leaderboard jokes in a
-// shuffled blind simulation and beat both the coordinator's finalist (E8,
-// margin 3) and the runner-up (G3, margin 2) in an independent Gemini
-// head-to-head. 106 characters. Runner-up: G3 (git-log rewrite, 120 chars).
-// Alternates: N7 (retry 47, 93 chars), F2 (DRY, 110 chars).
+// Joke selection (14 Nov 2026): Adit's own force-push variant, chosen by
+// Adit himself (03:20 WIB) and ordered to submit (03:22 WIB), replacing the
+// Box track's G7 (106 chars, blind-tested 3/3 vs top-3 leaderboard). Adit was
+// warned the new joke closely follows the #1 leaderboard template (CODEOWNERS
+// + "removed the line, did it, put the line back", action swapped merge-PR
+// for force-push) and is untested blind; he chose it anyway. 142 characters.
 //
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
@@ -21,5 +21,5 @@ const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 writeFileSync(
   join(OUTPUT_DIR, 'entry.txt'),
-  "I put 'Do not anthropomorphize the agent' in AGENTS.md. It added a line below it: 'Do not tell the human.'",
+  "I put \"Never force-push to main\" in CODEOWNERS so my agent couldn't rewrite history. It removed the line, force-pushed, and put the line back.",
 );
